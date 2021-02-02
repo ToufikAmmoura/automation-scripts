@@ -8,8 +8,8 @@ PATH = "C:\\Users\\toufi\\Downloads"
 
 class MyHandler(PatternMatchingEventHandler):
     def on_modified(self, event):
-        os.system("python chooser-win.py")
-        os.system(f"move {event.src_path} C:\\Users\\toufi\\OneDrive\\Documenten")
+        command = f"python choosr-win.py {event.src_path}"
+        os.system(command)
 
 if __name__ == "__main__":
     patterns = ["*.pdf", "*tex"]

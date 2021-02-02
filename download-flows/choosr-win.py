@@ -1,8 +1,13 @@
 import os
+import sys
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
-source  = "C:\\Users\\toufi\\Downloads" 
+fileName = str(sys.argv[1])
+
+print("[FILENAME]", fileName)
+
+source = f"C:\\Users\\toufi\\Downloads\\{fileName}" 
 path = "C:\\Users\\toufi\\OneDrive\\Documenten\\s4" 
 folders = None
 choice = None
@@ -24,15 +29,16 @@ while True:
         chosenFolder = process.extractOne( query=choice, choices=folders, scorer=fuzz.partial_ratio )[0]
         path = f"{path}\\{chosenFolder}"
 
-# gooi hier de move command
-print("\t[ACTION] File has been moved\n")
+path = f"{path}\\{fileName}"
+os.rename(source, path)
+# print("\t[ACTION] File has been moved\n")
 
-choice = input("\tDo you want to change the filename (Y/N)?: ")
+# choice = input("\tDo you want to change the filename (Y/N)?: ")
 
-if choice.upper() == "Y":
-    newName = input("\tEnter the new name: ")
-    new = f"{path}\\{newName}"
-    os.rename(path, new)    # hernoemen van het bestand
+# if choice.upper() == "Y":
+#     newName = input("\tEnter the new name: ")
+#     new = f"{path}\\{newName}"
+#     os.rename(path, new)    # hernoemen van het bestand
 
 print(f"\n\t[SOURCE PATH] {source}")
 
