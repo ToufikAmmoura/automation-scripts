@@ -16,6 +16,7 @@ def dirCommand(path):
     global folders
     print("\n\t[MAPPEN]\n")
     folders = os.listdir(path)
+    print("[INFO]", len(folders))
     for folder in folders:
         print(f"\t{folder}")
 
