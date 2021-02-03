@@ -10,8 +10,9 @@ class MyHandler(PatternMatchingEventHandler):
     def on_modified(self, event):
         lastSlash = event.src_path.rfind("\\")
         fileName = event.src_path[lastSlash+1:]
-        command = f"python choosr-win.py {fileName}"
-        os.system(command)
+        if fileName in os.listdir(PATH):
+            command = f"python choosr-win.py {fileName}"
+            os.system(command)
 
 if __name__ == "__main__":
     patterns = ["*.pdf", "*tex"]

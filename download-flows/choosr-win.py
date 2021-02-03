@@ -32,7 +32,6 @@ while True:
 
 path = f"{path}\\{fileName}"
 os.rename(source, path)
-# print("\t[ACTION] File has been moved\n")
 
 # choice = input("\tDo you want to change the filename (Y/N)?: ")
 
