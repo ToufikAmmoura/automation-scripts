@@ -19,7 +19,7 @@ def dirCommand(path):
     # Print de mogelijke mappen om naar te moven
     global directories
     directories = os.listdir(path)
-    filter(isDirectory, directories)
+    directories = list(filter(isDirectory, directories))
     if directories:
         print("\n\t[MAPPEN]\n")
         for directory in directories:
