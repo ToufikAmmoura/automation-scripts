@@ -15,7 +15,7 @@ class MyHandler(PatternMatchingEventHandler):
             os.system(command)
 
 if __name__ == "__main__":
-    patterns = ["*.pdf", "*tex"]
+    patterns = ["*.pdf", "*tex", "*zip"]
     ignore_patterns = ["*.part"]
     ignore_directories = False
     case_sensitive = True
