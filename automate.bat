@@ -1,0 +1,1 @@
+"C:\Users\toufi\AppData\Local\Programs\Python\Python38\pythonw.exe" "C:\Users\toufi\OneDrive\Documenten\batcave\automation-scripts\automate.pyw"
