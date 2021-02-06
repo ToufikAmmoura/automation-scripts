@@ -10,6 +10,7 @@ source = f"C:\\Users\\toufi\\Downloads\\{fileName}"
 path = "C:\\Users\\toufi\\OneDrive\\Documenten\\s4"     # Deze moet veranderd worden iedere keer dat we een nieuw semester hebben
 directories = None
 choice = None
+moveFile = False
 
 def isDirectory(name):
     filepath = f"{path}\\{name}"
@@ -30,12 +31,14 @@ while True:
     if not directories or not choice:
         break
     else: 
+        moveFile = True
         choice = input("\n\tBij welke map hiervan hoort dit bestand?: ")
         chosenFolder = process.extractOne( query=choice, choices=directories, scorer=fuzz.partial_ratio )[0]
         path = f"{path}\\{chosenFolder}"
 
-path = f"{path}\\{fileName}"
-os.rename(source, path)
+if moveFile:
+    path = f"{path}\\{fileName}"
+    os.rename(source, path)
 
 # choice = input("\tDo you want to change the filename (Y/N)?: ")
 
